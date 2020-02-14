@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-function Child(props) {
-
-    useEffect(() => {
-        console.log("child");
-    }, [props]);
+let childCount = 0
+function Child() {
+    useEffect(()=>{
+        childCount ++;
+    },[childCount])
+    return(<>
+    <h2>Child Counter: {childCount}</h2>
     
-    return (<>
-        {props.count}
-    </>);
+    </>)
 }
 
 export default Child;
